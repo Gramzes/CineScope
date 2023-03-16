@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nested_graph"
+    app:startDestination="@id/mainPageFragment2">
+    <fragment
+        android:id="@+id/categoriesListFragment"
+        android:name="com.gramzin.cinescope.presentation.fragments.CategoriesListFragment"
+        android:label="CategoriesListFragment" />
+    <fragment
+        android:id="@+id/mainPageFragment2"
+        android:name="com.gramzin.cinescope.presentation.fragments.MainPageFragment"
+        android:label="MainPageFragment" >
+        <action
+            android:id="@+id/action_mainPageFragment2_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.gramzin.cinescope.presentation.fragments.CategoriesFragment"
+        android:label="CategoriesFragment" />
+    <fragment
+        android:id="@+id/filmListFragment"
+        android:name="com.gramzin.cinescope.presentation.fragments.FilmListFragment"
+        android:label="FilmListFragment" />
+
+</navigation>
