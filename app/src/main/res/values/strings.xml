@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main">Main</string>
     <string name="categories">Categories</string>
+    <string name="top_popular">Топ популярных</string>
+    <string name="top_best">Топ лучших</string>
+    <string name="top_await">Топ ожидаемых</string>
+    <string name="loading_error_message">Произошла ошибка при загрузке данных. Проверьте подключение к сети.</string>
+    <string name="retry">Повторить</string>
 </resources>

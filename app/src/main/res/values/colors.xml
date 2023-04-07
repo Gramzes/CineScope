@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="rating">#3BB33B</color>
+    <color name="retry_text">#2B92FF</color>
 </resources>

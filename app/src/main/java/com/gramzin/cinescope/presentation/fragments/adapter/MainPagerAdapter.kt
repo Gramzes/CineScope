@@ -1,8 +1,9 @@
-package com.gramzin.cinescope.presentation.fragments
+package com.gramzin.cinescope.presentation.fragments.adapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.gramzin.cinescope.presentation.fragments.FilmListFragment
 
 class MainPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
     override fun getItemCount() = 3

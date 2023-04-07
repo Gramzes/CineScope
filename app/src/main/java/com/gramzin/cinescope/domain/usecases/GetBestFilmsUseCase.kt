@@ -1,26 +1,16 @@
 package com.gramzin.cinescope.domain.usecases
 
-import com.gramzin.cinescope.common.Resource
+import android.util.Log
+import androidx.paging.PagingData
+import com.gramzin.cinescope.data.room.db.AppDatabase
+import com.gramzin.cinescope.data.storage.FilmLocalStorage
 import com.gramzin.cinescope.domain.model.Film
 import com.gramzin.cinescope.domain.repository.FilmRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import retrofit2.HttpException
-import java.io.IOException
 import javax.inject.Inject
 
 class GetBestFilmsUseCase @Inject constructor(private val filmRepository: FilmRepository) {
-    operator fun invoke(page: Int): Flow<Resource<List<Film>>> = flow{
-        try {
-            emit(Resource.Loading())
-            val films = filmRepository.getBestFilms(page)
-            emit(Resource.Success(films))
-        }
-        catch (ex: HttpException){
-            emit(Resource.Error(ex))
-        }
-        catch (ex: IOException){
-            emit(Resource.Error(ex))
-        }
+    operator fun invoke(): Flow<PagingData<Film>> {
+        return filmRepository.getBestFilmsPaged()
     }
 }

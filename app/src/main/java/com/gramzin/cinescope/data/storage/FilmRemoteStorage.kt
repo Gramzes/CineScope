@@ -4,9 +4,9 @@ import com.gramzin.cinescope.data.model.Film
 
 interface FilmRemoteStorage {
 
-    fun getBestFilms(page: Int): List<Film>
+    suspend fun getBestFilms(page: Int): List<Film>
 
-    fun getPopularFilms(page: Int): List<Film>
+    suspend fun getPopularFilms(page: Int): List<Film>
 
-    fun getTopAwaitFilms(page: Int): List<Film>
+    suspend fun getTopAwaitFilms(page: Int): List<Film>
 }

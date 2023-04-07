@@ -1,6 +1,9 @@
 package com.gramzin.cinescope.domain.usecases
 
+import android.util.Log
+import androidx.paging.PagingData
 import com.gramzin.cinescope.common.Resource
+import com.gramzin.cinescope.data.room.db.AppDatabase
 import com.gramzin.cinescope.domain.model.Film
 import com.gramzin.cinescope.domain.repository.FilmRepository
 import kotlinx.coroutines.flow.Flow
@@ -10,17 +13,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 class GetPopularFilmsUseCase @Inject constructor(private val filmRepository: FilmRepository) {
-    operator fun invoke(page: Int): Flow<Resource<List<Film>>> = flow{
-        try {
-            emit(Resource.Loading())
-            val films = filmRepository.getPopularFilms(page)
-            emit(Resource.Success(films))
-        }
-        catch (ex: HttpException){
-            emit(Resource.Error(ex))
-        }
-        catch (ex: IOException){
-            emit(Resource.Error(ex))
-        }
+    operator fun invoke(): Flow<PagingData<Film>> {
+        return filmRepository.getPopularFilmsPaged()
     }
 }

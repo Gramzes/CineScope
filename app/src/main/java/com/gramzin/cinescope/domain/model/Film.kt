@@ -8,4 +8,5 @@ data class Film(var id: Int,
                 var countries: List<String>?,
                 var genres: List<String>?,
                 var rating: String?,
-                var poster: String?)
+                var poster: String?,
+                var posterPreview: String?)
